@@ -1,16 +1,1142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script>
-        window.onload = function() {
-            window.location.href = "landingpage.html";
-        }
-    </script>
+     <meta charset="UTF-8">
+     <link rel="icon" href="/BB.png" />
+     <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+     <title>Brickbucket - building materials procurement platform</title>
+     <!-- Include Tailwind CSS from CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <!-- Include the script for loading header and footer -->
+     <script src="/js/includes.js"></script>
+     <script>
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+      // Page was loaded from bfcache (back-forward cache)
+      window.location.reload();
+    }
+  });
+</script>
+     
 </head>
-<body>
-    <p>If you are not redirected automatically, <a href="landingpage.html">click here</a>.</p>
+<body class="flex flex-col min-h-screen">
+     <!-- Header - now sticky -->
+     <header class="sticky top-0 z-50 mt-2 mx-2 md:mx-4 ">
+         <div id="header-placeholder"></div>
+     </header>
+
+    <div class="relative">
+ <main class="flex-1 container mx-auto px-8 py-8 lg:py-12">
+    <div class="flex flex-col md:flex-row">
+        <!-- Text content - 70% width on medium and larger screens -->
+        <div class="w-full md:w-[65%] pr-0 md:pr-4">
+            <h1 class="text-left text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6">We take care of procurement so you stay focused on building.</h1>
+            <div class="text-[#524D4D] text-left text-lg sm:text-xl md:text-2xl leading-relaxed mb-6">
+                <p class="text-left">Made for SME Builders - Brickbucket gets you the right materials at the right price, delivered on time. No chasing suppliers.</p>
+            </div>
+            <!-- <a href ="/consumer">
+           <button class="mt-3 font-bold px-3 py-2 rounded-full flex justify-start border border-[#D64541] text-[#D64541] hover:bg-[#D64541] hover:text-white transition-colors duration-300">
+    Get Started
+</button>
+</a> -->
+
+<a id="get-started-btn"
+   href="/consumer"
+   class="relative z-40 bg-[#D64541] text-white rounded-full hover:shadow-xl px-4 py-2 text-sm font-medium transition-all duration-200 ease-in-out inline-flex items-center justify-center">
+   <span class="button-text">Get Started</span>
+   <span class="loader hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+</a>
+
+
+
+
+  <!--Get Started Button Animation-->
+  <script>
+  const btn = document.getElementById('get-started-btn');
+  const text = btn.querySelector('.button-text');
+  const loader = btn.querySelector('.loader');
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Lock current width to prevent size shrinking
+    const width = btn.offsetWidth;
+    btn.style.width = width + 'px';
+
+    // Switch to loader
+    text.classList.add('hidden');
+    loader.classList.remove('hidden');
+
+    // Navigate after short delay
+    setTimeout(() => {
+      window.location.href = btn.getAttribute('href');
+    }, 400); // adjust delay as needed
+  });
+</script>
+
+
+
+
+
+        </div>
+        
+        <!-- Image container - with right padding to prevent sticking to the edge -->
+        <div class="hidden md:block md:w-[35%] relative flex items-center pr-6 md:pr-6 lg:pr-4">
+            <img
+                src="/buildingimg1.png"
+                alt="Building Together"
+                class="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[420px] lg:max-h-[480px] xl:max-h-[540px] object-contain"
+                loading="lazy"
+            >
+        </div>
+    </div>
+</main>
+
+   
+    <!-- Mobile image positioned at the top (shown only on smaller screens) -->
+<div class="relative z-10 md:hidden w-full flex mb-1 -mt-[110px]">
+    <img
+        src="/buildingimg1.png"
+        alt="Building Together"
+        class="max-h-[460px] w-full object-contain"
+        loading="lazy"
+    >
+</div>
+
+</div>
+
+     <main class="bg-[#D9D9D9] bg-opacity-50 py-0 relative">
+    <div class="container mx-auto px-8 py-8 sm:py-10 md:py-12 relative">
+        <!-- Text content with full width -->
+        <div class="w-full">
+            <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-4">Build Together. Build Stronger.</h1>
+            <p class="text-[#524D4D] text-base sm:text-lg md:text-xl text-left mt-1 sm:mt-2 mb-2">
+                We're a B2B platform built to simplify the chaos of building materials procurement - by replacing outdated, fragmented systems with clarity, transparency, and value on both sides of the equation.
+            </p>
+        </div>
+    </div>
+</main>
+
+
+<main class="flex-1 container mx-auto px-8 py-8 pb-4 sm:pb-6 lg:pb-8">
+    <div class="mb-10 ">
+        <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-2">What We Do?</h1>
+        <h3 class="text-left text-md sm:text-lg md:text-xl lg-text-2xl">
+            Brickbucket connects SME builders with vetted suppliers through a curated marketplace of building materials. We simplify and streamline the procurement process, making it faster, smarter, and more transparent.
+        </h3>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <!-- Left side image - aligned to the left -->
+        <div class="flex items-center justify-start">
+            <img 
+                src="/images/img1.png" 
+                alt="Brickbucket Platform" 
+                class="w-full sm:w-4/5 md:w-full max-w-xl md:max-w-5xl lg:max-w-lg h-auto object-contain rounded-[5px] shadow-sm transition-all duration-300 hover:shadow-xl" 
+                loading="lazy"
+            >
+        </div>
+        
+        <!-- Right side features - aligned to the left -->
+       <div class="flex flex-col justify-center space-y-3">
+    <!-- Feature 1 -->
+    <div class="flex items-center gap-2 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+            <img src="/images/rupee.png" alt="Pricing Icon" class="w-[80%] h-[80%] object-contain">
+        </div>
+        <div>
+            <p class="text-left font-semibold text-base sm:text-lg md:text-xl lg:text-lg text-slate-800">Transparent pricing across suppliers</p>
+        </div>
+    </div>
+    
+    <!-- Feature 2 -->
+    <div class="flex items-center gap-2 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+            <img src="/images/docCheck.png" alt="Specifications Icon" class="w-[80%] h-[80%] object-contain">
+        </div>
+        <div>
+            <p class="text-left font-semibold text-base sm:text-lg md:text-xl lg:text-lg text-slate-800">Product specs made simple</p>
+        </div>
+    </div>
+    
+    <!-- Feature 3 -->
+    <div class="flex items-center gap-2 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+            <img src="/images/starBadge.png" alt="Rewards Icon" class="w-[80%] h-[80%] object-contain">
+        </div>
+        <div>
+            <p class="text-left font-semibold text-base sm:text-lg md:text-xl lg:text-lg text-slate-800">Rewards for loyalty (finally!)</p>
+        </div>
+    </div>
+    
+    <!-- Feature 4 -->
+    <div class="flex items-center gap-2 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+            <img src="/images/shakehand.png" alt="Services Icon" class="w-[80%] h-[80%] object-contain">
+        </div>
+        <div>
+            <p class="text-left font-semibold text-base sm:text-lg md:text-xl lg:text-lg text-slate-800 whitespace-normal">Value-added services to support both builders & suppliers</p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</main>
+
+    <main class="flex-1 container mx-auto px-8 py-4 sm:py-6 lg:py-8 overflow-hidden">    
+    <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-6 sm:mb-8 lg:mb-10">How it Works?</h1>       
+    
+    <!-- Small and Medium screens - Keep existing layout -->    
+    <div class="flex flex-col sm:flex-row gap-6 sm:gap-6 lg:hidden">        
+        <!-- Left Column (Right-aligned images) -->        
+        <div class="flex flex-col gap-6 sm:w-1/2 sm:pr-3 lg:pr-4">            
+            <!-- Card 1 - Left aligned on small screens -->            
+            <div class="bg-white pt-4 px-4 sm:pt-5 sm:px-5 lg:pt-6 lg:px-6 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all h-[320px] sm:h-[340px] md:h-[420px] lg:h-[380px] flex flex-col max-w-[240px] sm:max-w-none ml-0 mr-auto sm:mx-0">                
+                <div class="flex-grow">                    
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 mt-1">Browse And Compare</h3>                    
+                    <p class="text-[#524D4D] text-sm sm:text-base mb-3">                        
+                        Discover <span class="lg:text-lg font-bold">curated products </span>                        
+                        with <span class="lg:text-lg font-bold">clear specifications</span>                        
+                        —so you're comparing quality, not just brands.                    
+                    </p>                
+                </div>                
+                <div class="flex justify-end items-end h-[160px] sm:h-[130px] md:h-[180px] lg:h-[150px] overflow-hidden">                    
+                    <img src="/images/work1.png" alt="Browse and Compare" class="max-w-[100%] sm:max-w-[85%] max-h-full w-auto h-auto object-contain">                
+                </div>            
+            </div>                       
+            
+            <!-- Card 2 - Right aligned on small screens -->            
+            <div class="bg-white pt-4 px-4 sm:pt-5 sm:px-5 lg:pt-6 lg:px-6 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all h-[320px] sm:h-[340px] md:h-[420px] lg:h-[380px] flex flex-col max-w-[240px] sm:max-w-none ml-auto mr-0 sm:mx-0">                
+                <div class="flex-grow">                    
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 mt-1">Earn as You Build</h3>                    
+                    <p class="text-[#524D4D] text-sm sm:text-base mb-3">                        
+                        Get rewarded for every purchase through our loyalty program—because                        
+                        <span class="lg:text-lg font-bold">loyalty should be rewarded.</span>                    
+                    </p>                
+                </div>                
+                <div class="flex justify-end items-end h-[160px] sm:h-[130px] md:h-[180px] lg:h-[150px] overflow-hidden">                    
+                    <img src="/images/work3.png" alt="Earn as You Build" class="max-w-[85%] sm:max-w-[60%] max-h-full w-auto h-auto object-contain">                
+                </div>            
+            </div>        
+        </div>               
+        
+        <!-- Right Column (Left-aligned images) -->        
+        <div class="flex flex-col gap-6 sm:mt-16 sm:w-1/2 sm:pt-8 sm:pl-1 lg:pl-6">            
+            <!-- Card 3 - Left aligned on small screens -->            
+            <div class="bg-white pt-4 px-4 sm:pt-5 sm:px-5 lg:pt-6 lg:px-6 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all h-[320px] sm:h-[340px] md:h-[420px] lg:h-[380px] flex flex-col max-w-[240px] sm:max-w-none ml-0 mr-auto sm:mx-0">                
+                <div class="flex-grow">                    
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 mt-1">Order with Confidence</h3>                    
+                    <p class="text-[#524D4D] text-sm sm:text-base mb-3">                        
+                        <span class="lg:text-lg font-bold">Transparent pricing</span>                        
+                        and<span class="lg:text-lg font-bold"> vetted suppliers </span>                        
+                        take the guesswork out of procurement.                    
+                    </p>                
+                </div>                
+                <div class="flex justify-start items-end h-[160px] sm:h-[130px] md:h-[180px] lg:h-[150px] overflow-hidden">                    
+                    <img src="/images/work2.png" alt="Order with Confidence" class="max-w-[85%] sm:max-w-[60%] max-h-full w-auto h-auto object-contain">                
+                </div>            
+            </div>                       
+            
+            <!-- Card 4 - CHANGED: Left side with space, image on left -->            
+            <div class="bg-white pt-4 px-4 sm:pt-5 sm:px-5 lg:pt-6 lg:px-6 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all h-[320px] sm:h-[340px] md:h-[420px] lg:h-[380px] flex flex-col max-w-[240px] sm:max-w-none ml-auto mr-0 sm:mx-0">                
+                <div class="flex-grow">                    
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 mt-1">Let Us Handle the Hassle</h3>                    
+                    <p class="text-[#524D4D] text-sm sm:text-base mb-3">                        
+                        From site measurements to after-sales support, Brickbucket offers services that                        
+                        <span class="lg:text-lg font-bold"> save you time and effort.</span>                    
+                    </p>                
+                </div>                
+                <div class="flex justify-start items-end h-[160px] sm:h-[130px] md:h-[180px] lg:h-[150px] overflow-hidden">                    
+                    <img src="/images/work4.png" alt="Let Us Handle the Hassle" class="max-w-[85%] sm:max-w-[60%] max-h-full w-auto h-auto object-contain">                
+                </div>            
+            </div>        
+        </div>    
+    </div>    
+    
+    <!-- Large and XL screens -->    
+    <div class="hidden lg:flex lg:flex-col lg:gap-12 xl:gap-16">        
+        <!-- Container 1: Increased right space -->        
+        <div class="pr-40 xl:pr-48">            
+            <div class="bg-white pt-8 px-8 pb-0 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all min-h-[240px] xl:min-h-[280px] relative">                
+                <!-- Text content - left side, top aligned -->                
+                <div class="w-[65%] pr-6">                    
+                    <h3 class="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">Browse And Compare</h3>                    
+                    <p class="text-[#524D4D] text-lg xl:text-xl leading-relaxed">                        
+                        Discover <span class="font-bold">curated products</span>                        
+                        with <span class="font-bold">clear specifications</span>                        
+                        —so you're comparing quality, not just brands.                    
+                    </p>                
+                </div>                               
+                
+                <!-- Image - separate div, right side, bottom fixed -->                
+                <div class="absolute bottom-0 right-8 w-[30%] h-[240px] xl:h-[260px]">                    
+                    <img src="/images/work1.png" alt="Browse and Compare" class="w-full h-full object-contain object-bottom">                
+                </div>            
+            </div>        
+        </div>        
+        
+        <!-- Container 2: Increased left space -->        
+        <div class="ml-32 xl:ml-40 bg-white pt-8 px-8 pb-0 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all min-h-[240px] xl:min-h-[280px] relative">            
+            <!-- Text content - left side, top aligned -->            
+            <div class="w-[65%] pr-6">                
+                <h3 class="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">Order with Confidence</h3>                
+                <p class="text-[#524D4D] text-lg xl:text-xl leading-relaxed">                    
+                    <span class="font-bold">Transparent pricing</span>                    
+                    and <span class="font-bold">vetted suppliers</span>                    
+                    take the guesswork out of procurement.                
+                </p>            
+            </div>                       
+            
+            <!-- Image - separate div, right side, bottom fixed -->            
+            <div class="absolute bottom-0 right-8 w-[30%] h-[240px] xl:h-[260px]">                
+                <img src="/images/work2.png" alt="Order with Confidence" class="w-full h-full object-contain object-bottom">            
+            </div>        
+        </div>        
+        
+        <!-- Container 3: Increased right space -->        
+        <div class="pr-40 xl:pr-48">            
+            <div class="bg-white pt-8 px-8 pb-0 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all min-h-[240px] xl:min-h-[280px] relative">                
+                <!-- Text content - left side, top aligned -->                
+                <div class="w-[65%] pr-6">                    
+                    <h3 class="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">Earn as You Build</h3>                    
+                    <p class="text-[#524D4D] text-lg xl:text-xl leading-relaxed">                        
+                        Get rewarded for every purchase through our loyalty program—because                        
+                        <span class="font-bold">loyalty should be rewarded.</span>                    
+                    </p>                
+                </div>                               
+                
+                <!-- Image - separate div, right side, bottom fixed -->                
+                <div class="absolute bottom-0 right-8 w-[30%] h-[240px] xl:h-[260px]">                    
+                    <img src="/images/work3.png" alt="Earn as You Build" class="w-full h-full object-contain object-bottom">                
+                </div>            
+            </div>        
+        </div>        
+        
+        <!-- Container 4: Increased left space -->        
+        <div class="ml-32 xl:ml-40 bg-white pt-8 px-8 pb-0 rounded-xl border border-[#A7A4A4] shadow-sm hover:shadow-md transition-all min-h-[240px] xl:min-h-[280px] relative">            
+            <!-- Text content - left side, top aligned -->            
+            <div class="w-[65%] pr-6">                
+                <h3 class="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">Let Us Handle the Hassle</h3>                
+                <p class="text-[#524D4D] text-lg xl:text-xl leading-relaxed">                    
+                    From site measurements to after-sales support, Brickbucket offers services that                    
+                    <span class="font-bold">save you time and effort.</span>                
+                </p>            
+            </div>                       
+            
+            <!-- Image - separate div, right side, bottom fixed -->            
+            <div class="absolute bottom-0 right-8 w-[30%] h-[240px] xl:h-[260px]">                
+                <img src="/images/work4.png" alt="Let Us Handle the Hassle" class="w-full h-full object-contain object-bottom">            
+            </div>        
+        </div>    
+    </div>
+</main>
+
+
+<!-- Why Brickbucket - For Builders -->
+<main class="flex-1 container mx-auto px-4 py-6 sm:py-8 lg:py-12 pb-4 overflow-hidden">
+    <div class="mb-8">
+        <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold">Why Brickbucket - For Builders</h1>
+    </div>
+    
+    <!-- Carousel container -->
+    <div class="relative">
+        <!-- Carousel track -->
+        <div class="carousel-track flex space-x-4 sm:space-x-6 overflow-x-auto pb-4 snap-x scrollbar-hide pl-4 sm:pl-8" id="builderCarousel">
+            <!-- Card 1 -->
+            <div class="carousel-card snap-start bg-[#FAFDFE] rounded-xl shadow-md p-4 sm:p-6 w-[75vw] sm:w-[320px] md:w-[400px] flex-shrink-0 border border-gray-100 transition-all duration-300 hover:shadow-lg">
+                <h3 class="text-lg font-bold text-black mb-2">Procurement Made Easy</h3>
+                <p class="text-black">No more chasing suppliers or figuring out specs—we simplify the process from end to end.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="carousel-card snap-start bg-[#FAFDFE] rounded-xl shadow-md p-4 sm:p-6 w-[75vw] sm:w-[320px] md:w-[400px] flex-shrink-0 border border-gray-100 transition-all duration-300 hover:shadow-lg">
+                <h3 class="text-lg font-bold text-black mb-2">Know What You're Paying For</h3>
+                <p class="text-black">Clear specifications so you don't overpay for a brand when a spec-equivalent product will do.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="carousel-card snap-start bg-[#FAFDFE] rounded-xl shadow-md p-4 sm:p-6 w-[75vw] sm:w-[320px] md:w-[400px] flex-shrink-0 border border-gray-100 transition-all duration-300 hover:shadow-lg">
+                <h3 class="text-lg font-bold text-black mb-2">Loyalty That Pays Off</h3>
+                <p class="text-black">Be rewarded for every purchase. More orders = more value unlocked.</p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="carousel-card snap-start bg-[#FAFDFE] rounded-xl shadow-md p-4 sm:p-6 w-[75vw] sm:w-[320px] md:w-[400px] flex-shrink-0 border border-gray-100 transition-all duration-300 hover:shadow-lg">
+                <h3 class="text-lg font-bold text-black mb-2">Focus on Building, Not Buying</h3>
+                <p class="text-black">We handle the heavy lifting—so you can focus on your projects.</p>
+            </div>
+        </div>
+        
+    <!-- Carousel indicators - responsive based on screen size -->
+<div class="hidden lg:flex justify-center space-x-2 mt-2">
+    <button class="w-4 h-4 rounded-full bg-[#D9D9D9]" data-index="0"></button>
+    <button class="w-4 h-4 rounded-full bg-[#D9D9D9]" data-index="1"></button>
+    <button class="w-4 h-4 rounded-full bg-[#D9D9D9] xl:hidden" data-index="2"></button>
+</div>
+
+    
+    <!-- JavaScript for carousel functionality -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('builderCarousel');
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const indicators = document.querySelectorAll('[data-index]');
+        
+        // Only run indicator code if indicators exist (on lg screens)
+        if (indicators.length > 0) {
+            let currentIndex = 0;
+            const totalPages = window.innerWidth >= 1280 ? 2 : 3;
+            
+            function scrollToCard(index) {
+                if (index < 0) index = 0;
+                if (index >= totalPages) index = totalPages - 1;
+                
+                currentIndex = index;
+                
+                // Calculate position based on page index
+                // For the last page, we want to show the last card fully
+                let targetCard = index;
+                if (index === totalPages - 1) {
+                    targetCard = cards.length - 1;
+                }
+                
+                const scrollPosition = cards[targetCard].offsetLeft - carousel.offsetLeft;
+                
+                // Smooth scroll to position
+                carousel.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('bg-[#D64541]', i === index);
+                    indicator.classList.toggle('bg-[#D9D9D9]', i !== index);
+                });
+            }
+            
+            // Set initial position to show first card and half of second
+            setTimeout(() => {
+                scrollToCard(0);
+            }, 100);
+            
+            // Event listeners for indicators
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    const index = parseInt(indicator.getAttribute('data-index'));
+                    scrollToCard(index);
+                });
+            });
+            
+            // Handle scroll events to update indicators
+            carousel.addEventListener('scroll', () => {
+                const scrollPosition = carousel.scrollLeft;
+                const carouselWidth = carousel.offsetWidth;
+                const totalWidth = carousel.scrollWidth;
+                const totalPages = window.innerWidth >= 1280 ? 2 : 3;
+                
+                // Calculate which page we're on based on scroll position
+                let page;
+                if (scrollPosition >= totalWidth - carouselWidth - 10) {
+                    // If we're at the end, select the last page
+                    page = totalPages - 1;
+                } else {
+                    // Otherwise calculate based on percentage scrolled
+                    const scrollPercentage = scrollPosition / (totalWidth - carouselWidth);
+                    page = Math.min(Math.floor(scrollPercentage * totalPages), totalPages - 1);
+                }
+                
+                // Update indicators if page changed
+                if (page !== currentIndex) {
+                    currentIndex = page;
+                    indicators.forEach((indicator, i) => {
+                        indicator.classList.toggle('bg-[#D64541]', i === currentIndex);
+                        indicator.classList.toggle('bg-[#D9D9D9]', i !== currentIndex);
+                    });
+                }
+            });
+        }
+        
+        // Add CSS to hide scrollbar but allow scrolling
+        const style = document.createElement('style');
+        style.textContent = `
+            .scrollbar-hide {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;     /* Firefox */
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;             /* Chrome, Safari and Opera */
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
+
+</main>
+
+<main class="flex-1 container mx-auto px-8 pt-6 pb-4 overflow-hidden">
+    <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-2 sm:mb-4">Builder Testimonials</h1>
+    
+    <!-- For large screens: grid layout -->
+    <div class="hidden lg:grid lg:grid-cols-2 lg:gap-8 ">
+        <!-- Testimonial Card 1 -->
+        <div class="bg-[#F4F4F4] rounded-xl shadow-md pt-12 pb-6 px-6 relative flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-100 mt-16">
+            <!-- Circular image positioned at top border -->
+            <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md absolute -top-10 left-1/2 transform -translate-x-1/2">
+                <img
+                    src="/images/sampleuser1.png"
+                    alt="Rajesh Sharma"
+                    class="w-full h-full object-cover"
+                    onerror="this.src='https://ui-avatars.com/api/?name=Rajesh+Sharma&background=D64541&color=fff'"
+                >
+            </div>
+            
+            <!-- Testimonial content -->
+            <p class="text-black mb-6 leading-relaxed text-left">
+                "As a builder, time, and reliability are everything, and Brickbucket delivers both. I used to spend hours coordinating with multiple suppliers; now, I do it all in a few clicks. It's like having a full procurement team in my pocket!"
+            </p>
+            
+            <!-- Name and company - left aligned -->
+            <div class="text-[#D64541] mt-auto text-left">
+                <h3 class="font-bold">Sandeep, Builder</h3>
+                <p class="text-sm">Director, Sharma Constructions</p>
+            </div>
+        </div>
+        
+        <!-- Testimonial Card 2 -->
+        <div class="bg-[#F4F4F4] rounded-xl shadow-md pt-12 pb-6 px-6 relative flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-100 mt-16">
+            <!-- Circular image positioned at top border -->
+            <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md absolute -top-10 left-1/2 transform -translate-x-1/2">
+                <img
+                    src="/images/sampleuser2.png"
+                    alt="Priya Patel"
+                    class="w-full h-full object-cover"
+                    onerror="this.src='https://ui-avatars.com/api/?name=Priya+Patel&background=D64541&color=fff'"
+                >
+            </div>
+            
+            <!-- Testimonial content -->
+            <p class="text-black mb-6 leading-relaxed text-left">
+                "With Brickbucket, sourcing materials has never been easier. The app offers great prices, timely delivery, and real-time tracking—perfect for busy builders like us."
+            </p>
+            
+            <!-- Name and company - left aligned -->
+            <div class="text-[#D64541] mt-auto text-left">
+                <h3 class="font-bold">Kiran, Builder</h3>
+                <p class="text-sm">Founder, Patel Housing Developers</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- For small and medium screens: horizontal scrollable layout -->
+    <div class="lg:hidden relative mt-8">
+        <!-- Reduced top margin to decrease space -->
+        <div class="flex overflow-x-auto pb-6 snap-x scrollbar-hide space-x-4 sm:space-x-6">
+            <!-- Testimonial Card 1 -->
+            <div class="flex-shrink-0 w-[85%] sm:w-[75%] md:w-[65%] snap-start bg-[#F4F4F4] rounded-xl shadow-md pt-12 pb-6 px-6 relative flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-100 mt-12">
+                <!-- Circular image positioned at top border with increased negative top value -->
+                <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md absolute -top-12 left-1/2 transform -translate-x-1/2">
+                    <img
+                        src="/images/sampleuser1.png"
+                        alt="Rajesh Sharma"
+                        class="w-full h-full object-cover"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Rajesh+Sharma&background=D64541&color=fff'"
+                    >
+                </div>
+                
+                <!-- Testimonial content -->
+                <p class="text-black mb-6 leading-relaxed text-left">
+                    "As a builder, time, and reliability are everything, and Brickbucket delivers both. I used to spend hours coordinating with multiple suppliers; now, I do it all in a few clicks. It's like having a full procurement team in my pocket!"
+                </p>
+                
+                <!-- Name and company - left aligned -->
+                <div class="text-[#D64541] mt-auto text-left">
+                    <h3 class="font-bold">Sandeep, Builder</h3>
+                    <p class="text-sm">Director, Sharma Constructions</p>
+                </div>
+            </div>
+            
+            <!-- Testimonial Card 2 -->
+            <div class="flex-shrink-0 w-[85%] sm:w-[75%] md:w-[65%] snap-start bg-[#F4F4F4] rounded-xl shadow-md pt-12 pb-6 px-6 relative flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-100 mt-12">
+                <!-- Circular image positioned at top border with increased negative top value -->
+                <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md absolute -top-12 left-1/2 transform -translate-x-1/2">
+                    <img
+                        src="/images/sampleuser2.png"
+                        alt="Priya Patel"
+                        class="w-full h-full object-cover"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Priya+Patel&background=D64541&color=fff'"
+                    >
+                </div>
+                
+                <!-- Testimonial content -->
+                <p class="text-black mb-6 leading-relaxed text-left">
+                    "With Brickbucket, sourcing materials has never been easier. The app offers great prices, timely delivery, and real-time tracking—perfect for busy builders like us."
+                </p>
+                
+                <!-- Name and company - left aligned -->
+                <div class="text-[#D64541] mt-auto text-left">
+                    <h3 class="font-bold">Kiran, Builder</h3>
+                    <p class="text-sm">Founder, Patel Housing Developers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CSS for hiding scrollbar while maintaining scroll functionality -->
+    <style>
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari and Opera */
+        }
+    </style>
+</main>
+
+<!-- Why Brickbucket - For Partners -->
+<main class="flex-1 container mx-auto px-8 pt-4 sm:pt-4 lg:pt-8 pb-12 overflow-hidden">
+    <h1 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8">Why Brickbucket - For Partners</h1>
+    
+    <!-- Mobile Stacked Carousel (only for mobile) -->
+    <div class="block sm:hidden relative h-[400px] w-full">
+        <div class="relative w-full h-full">
+            <!-- Next card (stacked behind) -->
+            <div id="mobile-card-next" class="absolute left-0 top-0 w-full h-full transition-all duration-500 ease-in-out transform translate-x-4 scale-95 opacity-70 z-20">
+                <div class="w-full h-full">
+                    <img
+                        id="mobile-next-img"
+                        src="/images/forPartners2.png"
+                        alt="Next Card"
+                        class="w-full h-full object-contain pointer-events-none"
+                    >
+                </div>
+            </div>
+            
+            <!-- Current card (highlighted) - positioned to start from left -->
+            <div id="mobile-card-current" class="absolute left-0 top-0 w-full h-full transition-all duration-500 ease-in-out transform translate-x-0 scale-100 opacity-100 z-30">
+                <div class="w-full h-full flex justify-start">
+                    <img
+                        id="mobile-current-img"
+                        src="/images/forPartners1.png"
+                        alt="Current Card"
+                        class="w-full h-full object-contain object-left pointer-events-none"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- iPad and Desktop version (horizontal scroll) -->
+    <div class="hidden sm:block relative">
+        <!-- Left arrow button -->
+        <button id="scrollLeft" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-3 hover:shadow-lg focus:outline-none -ml-4 hidden lg:block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#D64541]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        
+        <!-- Scrollable row of images -->
+        <div id="partnerScroller" class="flex overflow-x-auto pb-6 snap-x scrollbar-hide space-x-1 sm:space-x-6 md:space-x-8 xl:space-x-2 2xl:space-x-2 px-2 sm:px-4 lg:px-8">
+            <!-- Image 1 -->
+            <div class="flex-shrink-0 w-[42%] sm:w-[42%] md:w-[45%] lg:w-96 xl:w-80 2xl:w-96 snap-start">
+                <div class="rounded-xl overflow-hidden transition-all duration-300 h-[350px] sm:h-[380px] md:h-[420px] lg:h-[480px]">
+                    <img
+                        src="/images/forPartners1.png"
+                        alt="Expanded Market Reach"
+                        class="w-full h-full object-contain"
+                        onerror="this.src='https://via.placeholder.com/400x533?text=Expanded+Market+Reach'"
+                    >
+                </div>
+            </div>
+            
+            <!-- Image 2 -->
+            <div class="flex-shrink-0 w-[42%] sm:w-[42%] md:w-[45%] lg:w-96 xl:w-80 2xl:w-96 snap-start">
+                <div class="rounded-xl overflow-hidden transition-all duration-300 h-[350px] sm:h-[380px] md:h-[420px] lg:h-[480px]">
+                    <img
+                        src="/images/forPartners2.png"
+                        alt="Simplified Sales Process"
+                        class="w-full h-full object-contain"
+                        onerror="this.src='https://via.placeholder.com/400x533?text=Simplified+Sales+Process'"
+                    >
+                </div>
+            </div>
+            
+            <!-- Image 3 -->
+            <div class="flex-shrink-0 w-[42%] sm:w-[42%] md:w-[45%] lg:w-96 xl:w-80 2xl:w-96 snap-start">
+                <div class="rounded-xl overflow-hidden transition-all duration-300 h-[350px] sm:h-[380px] md:h-[420px] lg:h-[480px]">
+                    <img
+                        src="/images/forPartners3.png"
+                        alt="Data-Driven Insights"
+                        class="w-full h-full object-contain"
+                        onerror="this.src='https://via.placeholder.com/400x533?text=Data-Driven+Insights'"
+                    >
+                </div>
+            </div>
+            
+            <!-- Image 4 -->
+            <div class="flex-shrink-0 w-[42%] sm:w-[42%] md:w-[45%] lg:w-96 xl:w-80 2xl:w-96 snap-start">
+                <div class="rounded-xl overflow-hidden transition-all duration-300 h-[350px] sm:h-[380px] md:h-[420px] lg:h-[480px]">
+                    <img
+                        src="/images/forPartners4.png"
+                        alt="Reduced Acquisition Costs"
+                        class="w-full h-full object-contain"
+                        onerror="this.src='https://via.placeholder.com/400x533?text=Reduced+Acquisition+Costs'"
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right arrow button -->
+        <button id="scrollRight" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-3 hover:shadow-lg focus:outline-none -mr-4 hidden lg:block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#D64541]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+    
+    <!-- JavaScript for carousels -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = [
+                "/images/forPartners1.png",
+                "/images/forPartners2.png",
+                "/images/forPartners3.png",
+                "/images/forPartners4.png"
+            ];
+            
+            let currentIndex = 0;
+            
+            // Mobile carousel functionality (2 cards only)
+            const mobileCurrentImg = document.getElementById('mobile-current-img');
+            const mobileNextImg = document.getElementById('mobile-next-img');
+            
+            function updateMobileCards() {
+                const nextIndex = (currentIndex + 1) % 4;
+                
+                if (mobileCurrentImg && mobileNextImg) {
+                    mobileCurrentImg.src = images[currentIndex];
+                    mobileNextImg.src = images[nextIndex];
+                }
+            }
+            
+            function nextCard() {
+                currentIndex = (currentIndex + 1) % 4;
+                updateMobileCards();
+            }
+            
+            function prevCard() {
+                currentIndex = (currentIndex - 1 + 4) % 4;
+                updateMobileCards();
+            }
+            
+            // Touch/swipe functionality for mobile only
+            let startX = 0;
+            let startY = 0;
+            let isDragging = false;
+            const mobileCarousel = document.querySelector('.block.sm\\:hidden');
+            
+            if (mobileCarousel) {
+                mobileCarousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    isDragging = true;
+                }, { passive: true });
+                
+                mobileCarousel.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+                    const diffX = Math.abs(currentX - startX);
+                    const diffY = Math.abs(currentY - startY);
+                    
+                    // Only prevent default if horizontal swipe is more significant than vertical
+                    if (diffX > diffY && diffX > 10) {
+                        e.preventDefault();
+                    } else if (diffY > diffX) {
+                        // If vertical scroll is more significant, allow it and cancel horizontal drag
+                        isDragging = false;
+                    }
+                }, { passive: false });
+                
+                mobileCarousel.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const endY = e.changedTouches[0].clientY;
+                    const diffX = startX - endX;
+                    const diffY = Math.abs(startY - endY);
+                    
+                    // Only trigger card change if horizontal movement is significant and greater than vertical
+                    if (Math.abs(diffX) > 50 && Math.abs(diffX) > diffY) {
+                        if (diffX > 0) {
+                            nextCard();
+                        } else {
+                            prevCard();
+                        }
+                    }
+                }, { passive: true });
+            }
+            
+            // Initialize mobile cards
+            updateMobileCards();
+            
+            // Desktop functionality
+            const scroller = document.getElementById('partnerScroller');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+            
+            if (scroller && scrollLeftBtn && scrollRightBtn) {
+                // Dynamic scroll amount calculation for better responsiveness
+                function getScrollAmount() {
+                    const containerWidth = scroller.offsetWidth;
+                    const cardWidth = scroller.querySelector('.flex-shrink-0').offsetWidth;
+                    
+                    // Responsive gap calculation
+                    let gap;
+                    if (window.innerWidth >= 1280) { // xl screens and above
+                        gap = 8; // 2xl:space-x-2 = 8px
+                    } else if (window.innerWidth >= 1024) { // lg screens
+                        gap = 16; // Default gap for lg
+                    } else if (window.innerWidth >= 768) { // md screens (iPad)
+                        gap = 32; // md:space-x-8 = 32px
+                    } else if (window.innerWidth >= 640) { // sm screens (iPad portrait)
+                        gap = 24; // sm:space-x-6 = 24px
+                    } else {
+                        gap = 4; // space-x-1 = 4px
+                    }
+                    
+                    // Calculate how many cards to scroll based on screen size
+                    if (window.innerWidth >= 1024) { // lg screens and above
+                        return cardWidth + gap; // Scroll by one card width + gap
+                    } else {
+                        return containerWidth * 0.7; // For smaller screens, scroll by 70% of container
+                    }
+                }
+                
+                scrollLeftBtn.addEventListener('click', function() {
+                    const scrollAmount = getScrollAmount();
+                    scroller.scrollBy({
+                        left: -scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                scrollRightBtn.addEventListener('click', function() {
+                    const scrollAmount = getScrollAmount();
+                    scroller.scrollBy({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                function updateButtonVisibility() {
+                    const isAtStart = scroller.scrollLeft <= 10;
+                    const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth - 10;
+                    const isAtEnd = scroller.scrollLeft >= maxScrollLeft;
+                    
+                    scrollLeftBtn.classList.toggle('opacity-50', isAtStart);
+                    scrollLeftBtn.classList.toggle('cursor-not-allowed', isAtStart);
+                    
+                    scrollRightBtn.classList.toggle('opacity-50', isAtEnd);
+                    scrollRightBtn.classList.toggle('cursor-not-allowed', isAtEnd);
+                }
+                
+                scroller.addEventListener('scroll', updateButtonVisibility);
+                
+                // Update button visibility on window resize
+                window.addEventListener('resize', updateButtonVisibility);
+                
+                // Initial button visibility check
+                setTimeout(updateButtonVisibility, 100);
+            }
+        });
+    </script>
+    
+    <!-- CSS for hiding scrollbar while maintaining scroll functionality -->
+    <style>
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari and Opera */
+        }
+    </style>
+</main>
+
+
+
+
+
+<main class="flex-1 container mx-auto px-8 py-0 pb-4 sm:pb-6 lg:pb-8 mb-0 sm:mb-auto mt- sm:mt-0">    
+    <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-4 sm:mb-6">Our Brand Partners</h1>       
+    
+    <div class="relative overflow-hidden py-4">        
+        <div id="partner-carousel" class="flex animate-scroll">            
+            <!-- First set of partners -->            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/asianpaintsLogo.png"                        
+                        alt="Partner 1"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+1'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/centuryLogo.png"                        
+                        alt="Partner 2"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+2'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/simpoloLogo.png"                        
+                        alt="Partner 3"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+3'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/kraftoLogo.png"                        
+                        alt="Partner 4"                        
+                        class="p-2 w-full h-[80%] object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+4'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <!-- Duplicate set for seamless loop -->            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/asianpaintsLogo.png"                        
+                        alt="Partner 1"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+1'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/centuryLogo.png"                        
+                        alt="Partner 2"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+2'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/simpoloLogo.png"                        
+                        alt="Partner 3"                        
+                        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+3'"                    
+                    >                
+                </div>            
+            </div>                       
+            
+            <div class="group flex-shrink-0 mx-2 sm:mx-3 md:mx-4 lg:mx-5">                
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-md flex items-center justify-center p-3 border border-gray-100 transition-all duration-300 group-hover:shadow-lg overflow-hidden">                    
+                    <img                        
+                        src="/images/kraftoLogo.png"                        
+                        alt="Partner 4"                        
+                        class="p-2 w-full h-[80%] object-contain transition-transform duration-300 group-hover:scale-110"                        
+                        onerror="this.src='https://via.placeholder.com/150?text=Partner+4'"                    
+                    >                
+                </div>            
+            </div>        
+        </div>    
+    </div>       
+    
+    <!-- CSS for continuous animation -->    
+    <style>        
+        .animate-scroll {
+            animation: scroll 4s linear infinite;
+            will-change: transform;
+        }               
+        
+        .animate-scroll:hover {            
+            animation-play-state: paused;        
+        }               
+        
+        @keyframes scroll {            
+            0% {                
+                transform: translateX(0);            
+            }            
+            100% {                
+                transform: translateX(-50%);            
+            }        
+        }               
+        
+        .scrollbar-hide {            
+            -ms-overflow-style: none;            
+            scrollbar-width: none;        
+        }        
+        
+        .scrollbar-hide::-webkit-scrollbar {            
+            display: none;        
+        }    
+    </style>
+</main>
+
+
+
+
+
+
+<main class="flex-1 container mx-auto px-8 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 overflow-hidden">
+    <h1 class="text-xl sm:text-2xl md:text-3xl text-left font-bold mb-6 sm:mb-8 lg:mb-10">FAQ's</h1>
+    
+    <div class="max-w-3xl lg:max-w-4xl mx-auto">
+        <!-- FAQ Items remain the same -->
+        <!-- FAQ Item 1 -->
+        <div class="mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200">
+            <button class="faq-toggle flex justify-between items-start w-full p-4 sm:p-5 text-left font-semibold text-slate-800 hover:text-[#D64541] focus:outline-none transition-colors duration-300 bg-white">
+                <span class="text-base sm:text-lg lg:text-xl pr-4">Who is Brickbucket for?</span>
+                <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden bg-gray-50">
+                <div class="p-4 sm:p-5 text-[#524D4D] text-sm sm:text-base lg:text-lg border-t border-gray-100">
+                    <p>We're built for SME builders looking to simplify their procurement—and for suppliers who want to grow without growing their overhead.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200">
+            <button class="faq-toggle flex justify-between items-start w-full p-4 sm:p-5 text-left font-semibold text-slate-800 hover:text-[#D64541] focus:outline-none transition-colors duration-300 bg-white">
+                <span class="text-base sm:text-lg lg:text-xl pr-4">How is Brickbucket different from a regular supplier directory?</span>
+                <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden bg-gray-50">
+                <div class="p-4 sm:p-5 text-[#524D4D] text-sm sm:text-base lg:text-lg  border-t border-gray-100">
+                    <p>We're more than a directory. We simplify spec comparisons, offer transparent pricing, and reward loyalty. Plus, we provide full-service support from order to installation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200">
+            <button class="faq-toggle flex justify-between items-start w-full p-4 sm:p-5 text-left font-semibold text-slate-800 hover:text-[#D64541] focus:outline-none transition-colors duration-300 bg-white">
+                <span class="text-base sm:text-lg lg:text-xl pr-4">How do I earn rewards?</span>
+                <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden bg-gray-50">
+                <div class="p-4 sm:p-5 text-[#524D4D] text-sm sm:text-base lg:text-lg border-t border-gray-100">
+                    <p>Every purchase on Brickbucket earns you points. The more you build through us, the more value you unlock—through discounts, services, and exclusive benefits.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200">
+            <button class="faq-toggle flex justify-between items-start w-full p-4 sm:p-5 text-left font-semibold text-slate-800 hover:text-[#D64541] focus:outline-none transition-colors duration-300 bg-white">
+                <span class="text-base sm:text-lg lg:text-xl pr-4">Can I trust the suppliers?</span>
+                <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden bg-gray-50">
+                <div class="p-4 sm:p-5 text-[#524D4D] text-sm sm:text-base lg:text-lg border-t border-gray-100">
+                    <p>Absolutely. Every supplier on Brickbucket is vetted to meet quality, fulfillment, and service standards.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200">
+            <button class="faq-toggle flex justify-between items-start w-full p-4 sm:p-5 text-left font-semibold text-slate-800 hover:text-[#D64541] focus:outline-none transition-colors duration-300 bg-white">
+                <span class="text-base sm:text-lg lg:text-xl pr-4">Is Brickbucket free to use?</span>
+                <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden bg-gray-50">
+                <div class="p-4 sm:p-5 text-[#524D4D] text-sm sm:text-base lg:text-lg border-t border-gray-100">
+                    <p>Yes—for builders, it's free to sign up and start sourcing. Suppliers get flexible plans depending on their scale and service needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript for FAQ accordion functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    // Close all other FAQ items first
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== this) {
+                            const otherContent = otherToggle.nextElementSibling;
+                            const otherIcon = otherToggle.querySelector('.faq-icon');
+                            
+                            if (!otherContent.classList.contains('hidden')) {
+                                otherContent.classList.add('hidden');
+                                otherIcon.classList.remove('rotate-180');
+                                otherToggle.parentElement.classList.remove('shadow-md');
+                                otherToggle.parentElement.classList.add('shadow-sm');
+                            }
+                        }
+                    });
+                    
+                    // Get the content element that follows this toggle
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    // Toggle the content visibility
+                    content.classList.toggle('hidden');
+                    
+                    // Rotate the icon when expanded
+                    if (content.classList.contains('hidden')) {
+                        icon.classList.remove('rotate-180');
+                        this.parentElement.classList.remove('shadow-md');
+                        this.parentElement.classList.add('shadow-sm');
+                    } else {
+                        icon.classList.add('rotate-180');
+                        this.parentElement.classList.remove('shadow-sm');
+                        this.parentElement.classList.add('shadow-md');
+                    }
+                });
+            });
+        });
+    </script>
+    
+
+  
+</main>
+
+
+
+     <!-- Footer placeholder -->
+     <div id="footer-placeholder"></div>
 </body>
 </html>
